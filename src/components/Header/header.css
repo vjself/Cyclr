@@ -1,0 +1,57 @@
+header {
+  height: 100px;
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid rgba(248, 244, 244, 0.856);
+}
+
+img {
+  width: 40%;
+  height: 99px;
+}
+
+.login-controls {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30px;
+  margin: 20px 0;
+  text-align: center;
+  padding: 10px 5px;
+}
+
+.login-controls li {
+  width: 200px;
+}
+
+.active {
+  text-decoration: underline;
+  color: rgb(255, 255, 255);
+}
+
+.login-controls a {
+  letter-spacing: 0.3px;
+  color: black;
+  font-size: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.login-controls.hover {
+  opacity: 1;
+}
+
+.login-controls li .hover {
+  color: rgb(145, 145, 145);
+  cursor: pointer;
+}
+
+.greeting {
+  font-size: 24px;
+  font-family: "Cardo", serif;
+  text-transform: uppercase;
+}

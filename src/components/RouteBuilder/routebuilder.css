@@ -1,0 +1,42 @@
+.input-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.search-cont input {
+  border: 0;
+  border-bottom: 2px solid #1976d2;
+  width: 100%;
+  font-size: 30px;
+  line-height: 35px;
+  height: 70px;
+  text-align: center;
+  padding: 10px;
+  background: transparent;
+  color: black;
+}
+
+.submit-route {
+  position: relative;
+  display: block;
+  height: 30px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.map-window {
+  margin-top: 2px;
+  border: 2px solid #cdd6df;
+  padding: 3px;
+  border-radius: 4px;
+  box-shadow: 20px 20px 50px grey;
+}
+
+.save-route-btn,
+.go-button {
+  margin-top: 2px;
+  background: #4b99ad;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}

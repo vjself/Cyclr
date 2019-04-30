@@ -1,0 +1,62 @@
+.register {
+  margin: 10px auto;
+  max-width: 400px;
+  padding: 20px 12px 10px 20px;
+  font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.register input[type="text"],
+.register input[type="date"],
+.register input[type="datetime"],
+.register input[type="number"],
+.register input[type="search"],
+.register input[type="time"],
+.register input[type="password"],
+.register input[type="email"],
+textarea,
+select {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border: 1px solid #bebebe;
+  padding: 7px;
+  margin: 0px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  outline: none;
+}
+.register input[type="text"]:focus,
+.register input[type="date"]:focus,
+.register input[type="datetime"]:focus,
+.register input[type="number"]:focus,
+.register input[type="search"]:focus,
+.register input[type="time"]:focus,
+.register input[type="password"]:focus,
+.register input[type="email"]:focus,
+.register textarea:focus,
+.register select:focus {
+  -moz-box-shadow: 0 0 8px #88d5e9;
+  -webkit-box-shadow: 0 0 8px #88d5e9;
+  box-shadow: 0 0 8px #88d5e9;
+  border: 1px solid #88d5e9;
+  width: 300px;
+}
+.register input[type="submit"],
+.register input[type="button"] {
+  background: #4b99ad;
+  padding: 8px 15px 8px 15px;
+  border: none;
+  color: #fff;
+}
+.register input[type="submit"]:hover,
+.register input[type="button"]:hover {
+  background: rgb(255, 255, 255);
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.register .required {
+  color: red;
+}

@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Cyclr Personal Project
 
-## Available Scripts
+## Database Tables
 
-In the project directory, you can run:
+```sql
+   - users
+      - user_id serial primary key
+      - first_name varchar(64) not null
+      - last_name varchar(64) not null
+      - age int
+      - gender varchar(5)
+      - email varchar(64) not null
+      - username varchar(24) not null
+      - password varchar(64) not null
 
-### `npm start`
+   - user_routes
+      - latitude/longitude json not null
+      - name varchar(24) not null
+      - description text not null
+      - id foreign key references (user_id) users
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   - comment_section
+      - username
+      - date timestamp not null
+      - id foreign key references (user_id) users
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Front-End
 
-### `npm test`
+### Dependecies
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- axios
+- react-router-dom
+- redux
+- react-redux
 
-### `npm run build`
+- **Components**
+  - Home
+  - MapDisplay
+  - UserProfileDisplay
+    - IndividualRouteDisplay
+  - Header
+    - Login/Register/Logout
+  - CommentWindowDisplay
+    - IndividualCommentCard
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Back-End
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+### Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- express
+- express-session
+- dotenv
+- massive
+- bcrypt
+- concurrently
 
-### `npm run eject`
+## **Endpoints**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**User Registration/Login/Logout**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- register - post > /auth/register
+- login - post > /auth/login/:id
+- logout - post > /auth/logout
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**User Route Endpoints**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- getAllUserRoutes - get > /route/getAll
+- searchUserRoute - get > /route/getOne
+- startPoint - post > /route/start?long&lat
+- endPoint - post > /route/end?long&lat
+- hotSpot - post > /route/hotspot?long&lat
+- deleteRoute - delete > /route/remove/:id
 
-## Learn More
+**User Comments Section**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- postComment - post > /chat/postChat
+- updateComment - put > /chat/updateChat/:id
+- deleteComment - delete > /chat/deleteChat/:id
+- getAllComments - get > /chat/public
+- getUserComments - get > /chat/public/:id
