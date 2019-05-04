@@ -21,6 +21,9 @@ CREATE TABLE routes
    end_lat FLOAT NOT NULL,
    end_lng FLOAT NOT NULL,
    description TEXT,
+   duration TEXT,
+   distance TEXT,
+   steps TEXT,
    user_id INTEGER REFERENCES users
    (id)
 );

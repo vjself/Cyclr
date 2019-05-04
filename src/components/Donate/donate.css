@@ -1,0 +1,17 @@
+/* .stripe {
+  width: 500px;
+  height: 500px;
+  background: black;
+  color: white;
+} */
+
+.outer-cont {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("https://images8.alphacoders.com/681/681196.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -3,6 +3,7 @@ import "./header.css";
 import logo from "./headerLogo.png";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
+import axios from "axios";
 
 class Header extends Component {
   constructor(props) {
@@ -11,43 +12,48 @@ class Header extends Component {
     this.state = {};
   }
 
+  logout() {
+    axios.get("/auth/logout").then(user => {
+      user.status(200).send(user);
+    });
+  }
+
   render() {
+    console.log(this.props.user);
     return (
       <header>
         <img src={logo} alt="" />
         {!this.props.user ? (
           <ul className="login-controls">
             <li>
-              <NavLink activeClassName="active" to="/login">
+              <NavLink exact to="/login">
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" exact to="/">
-                Register
-              </NavLink>
+              <NavLink to="/register">Register</NavLink>
             </li>
           </ul>
         ) : (
           <ul className="login-controls">
-            <li className="greeting">{`Hello ${
-              this.props.user.first_name
-            }!`}</li>
             <li>
-              <NavLink activeClassName="active" to="/route">
-                Find Route
-              </NavLink>
+              <NavLink to="/route">Find Route</NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/donate">
-                Donate
-              </NavLink>
+              <NavLink to="/donate">Donate</NavLink>
             </li>
             <li>
-              <NavLink activeClassName="active" to="/userRoutes">
-                Your Routes
-              </NavLink>
+              <NavLink to="/userRoutes">Your Routes</NavLink>
             </li>
+            {this.props.user.id ? (
+              <li onClick={this.logout}>
+                <a>Logout</a>
+              </li>
+            ) : (
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            )}
           </ul>
         )}
       </header>

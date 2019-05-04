@@ -18,6 +18,9 @@ class SaveRoute extends Component {
       strtLng,
       endLat,
       endLng,
+      duration,
+      distance,
+      steps,
       id
     } = this.props;
     axios
@@ -28,17 +31,22 @@ class SaveRoute extends Component {
         strtLng,
         endLat,
         endLng,
+        duration,
+        distance,
+        steps,
         id
       })
       .then(userRoutes => {
+        console.log("FRONT-RES --->", userRoutes.data);
         this.props.saveUserRoute(userRoutes.data);
       })
       .catch(err => {
-        alert(err.response.request.response);
+        alert(err);
       });
   };
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <button className="save-route-btn" onClick={this.saveUserRoute}>

@@ -1,26 +1,35 @@
 .App {
   text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: white;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit !important;
+}
+
+a :hover {
+  text-decoration: underline;
 }
 
 .outer-cont {
   display: flex;
+
   flex-wrap: wrap;
-  background-color: rgba(250, 246, 246, 0.918);
-  height: 100vh;
   justify-content: center;
-  width: 60%;
-  align-items: center;
-  border-left: 3px groove rgb(250, 246, 246);
-  border-right: 3px groove rgb(250, 246, 246);
-  overflow: scroll;
-}
-.mast-img img {
-  height: 400px;
   width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  margin: 0 auto;
 }

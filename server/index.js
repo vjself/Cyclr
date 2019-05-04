@@ -1,13 +1,17 @@
 const express = require("express");
-const session = require("express-session");
-const bcrypt = require("bcrypt");
 const app = express();
 const massive = require("massive");
+const session = require("express-session");
 require("dotenv").config();
 const gC = require("./controllers/gpsController");
 const aC = require("./controllers/authController");
 const uC = require("./controllers/userRoutesController");
+const dC = require("./controllers/donateController");
+const cookieParser = require("cookie-parser");
+const MemoryStore = require("memorystore")(session);
+app.use(cookieParser());
 app.use(express.json());
+app.use(require("body-parser").text());
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -16,11 +20,13 @@ massive(CONNECTION_STRING).then(db => {
   console.log("DB online.");
 });
 
+app.use(cookieParser());
 app.use(
   session({
     resave: true,
     saveUninitialized: false,
-    secret: SESSION_SECRET
+    secret: SESSION_SECRET,
+    store: new MemoryStore({ maxAge: 60 * 60 * 12 })
   })
 );
 
@@ -28,6 +34,9 @@ app.use(
 app.post("/auth/register", aC.register);
 app.post("/auth/login", aC.login);
 app.get("/auth/logout", aC.logout);
+
+//Stripe
+app.post("/api/save-stripe-token", dC.onToken);
 
 //Directions
 app.post("/api/route", gC.getDirections);

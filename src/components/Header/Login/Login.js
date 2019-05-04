@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./login.css";
 import { connect } from "react-redux";
 import { login } from "../../../redux/reducer";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 class Login extends Component {
@@ -34,8 +35,16 @@ class Login extends Component {
 
   render() {
     return (
-      <div className="login">
-        <span>LOGIN HERE:</span>
+      <section className="login">
+        <span>LOG IN</span>
+        <br />
+        <br />
+        <br />
+        <div className="welcome">
+          Need an account? <NavLink to="/register">Create one here!</NavLink>
+        </div>
+        <br />
+        <br />
         <input
           name="username"
           value={this.state.username}
@@ -43,6 +52,7 @@ class Login extends Component {
           placeholder="Username..."
           onChange={e => this.changeHandler(e.target.name, e.target.value)}
         />
+        <br />
         <input
           name="password"
           value={this.state.password}
@@ -50,8 +60,12 @@ class Login extends Component {
           placeholder="Password..."
           onChange={e => this.changeHandler(e.target.name, e.target.value)}
         />
-        <button onClick={this.login}>Login</button>
-      </div>
+        <br />
+        <br />
+        <button className="login-button" onClick={this.login}>
+          Login
+        </button>
+      </section>
     );
   }
 }

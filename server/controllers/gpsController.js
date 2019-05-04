@@ -12,12 +12,7 @@ module.exports = {
       )
       .then(response => {
         route = response.data;
-        res
-          .status(200)
-          .send(route)
-          .catch(err => {
-            err;
-          });
+        res.status(200).send(route);
       });
   }
 };

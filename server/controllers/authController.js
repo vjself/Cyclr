@@ -24,12 +24,7 @@ module.exports = {
         last_name: user[0].last_name,
         username: user[0].username
       };
-      res
-        .status(201)
-        .send(req.session.user)
-        .catch(err => {
-          err;
-        });
+      res.status(201).send(req.session.user);
     }
   },
 

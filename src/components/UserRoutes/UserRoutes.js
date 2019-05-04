@@ -42,10 +42,10 @@ class UserRoutes extends Component {
 
   render() {
     let routeInstance = this.props.userRoutes.map(e => {
-      console.log(e.description);
       return (
         <UserRoutesDisplay
           key={e.id}
+          routes={this.props.userRoutes}
           strtAdd={e.strt_add}
           endAdd={e.end_add}
           strtLat={e.strt_lat}
@@ -53,6 +53,7 @@ class UserRoutes extends Component {
           endLat={e.end_lat}
           endLng={e.end_lng}
           description={e.description}
+          instructions={e.steps}
           id={e.id}
           deleteRouteFn={this.deleteRoute}
           updateRouteFn={this.updateRoute}
@@ -61,7 +62,6 @@ class UserRoutes extends Component {
     });
     return (
       <div className="user-routes">
-        <UserRoutesDisplay desc={this.props.userRoutes.description} />
         <div className="user-route-title">Saved Routes</div>
         {routeInstance}
       </div>

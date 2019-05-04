@@ -1,5 +1,74 @@
 .user-route-title {
   font-weight: bold;
   font-size: 32px;
-  border-bottom: 2px solid black;
+
+  margin-top: 100px;
+  color: white;
+}
+.addy-display {
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+.user-routes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://adventure.com/wp-content/uploads/2018/04/Lesotho-Singletrack-Riding-1.jpg");
+  margin-left: -px;
+}
+
+.user-maps-display > .delete-button {
+  height: 20px;
+  margin-top: 75px;
+  width: 20px;
+  border-radius: 25px;
+  background-size: cover;
+  margin-left: 10px;
+  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtewK0mODnhNNOKfgv-wW3ZQBiBEMbGFh3Ty_UdqrEUrYQNZfstw");
+}
+.user-maps-display .edit-button {
+  height: 20px;
+  margin-top: 75px;
+  margin-left: 100px;
+  width: 20px;
+  background-size: cover;
+  margin-left: 10px;
+  background-image: url("https://image.flaticon.com/icons/png/512/84/84380.png");
+}
+
+h1 {
+  font-size: 36px;
+  color: white;
+  border-bottom: 2px solid rgba(241, 237, 237, 0.753);
+  padding: 5px;
+}
+
+.map-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 55.7vh;
+  width: 100vw;
+  background-image: url("https://images8.alphacoders.com/681/681196.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: -10px;
+}
+
+.steps-box {
+  height: 600px;
+  width: 300px;
+  overflow: scroll;
+  color: black;
+  font-size: 20px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.534);
 }

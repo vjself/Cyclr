@@ -1,22 +1,23 @@
 header {
-  height: 100px;
+  height: 80px;
   width: 100vw;
-  background-color: rgb(255, 255, 255);
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  border-bottom: 2px solid rgba(248, 244, 244, 0.856);
 }
 
 img {
-  width: 40%;
-  height: 99px;
+  width: 30%;
+  height: 80px;
+
+  /* reverses background color */
+  /* -webkit-filter: brightness(1) contrast(300%) invert(1); */
 }
 
 .login-controls {
   position: relative;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   height: 30px;
   margin: 20px 0;
@@ -24,13 +25,16 @@ img {
   padding: 10px 5px;
 }
 
-.login-controls li {
-  width: 200px;
+.login-controls > li > a {
+  text-decoration: none;
 }
 
-.active {
+.login-controls > li {
+  width: 200px;
+  cursor: pointer;
+}
+.login-controls li :hover {
   text-decoration: underline;
-  color: rgb(255, 255, 255);
 }
 
 .login-controls a {
@@ -38,20 +42,13 @@ img {
   color: black;
   font-size: 18px;
   text-transform: uppercase;
-  text-decoration: none;
+  cursor: pointer;
 }
 
 .login-controls.hover {
   opacity: 1;
 }
 
-.login-controls li .hover {
-  color: rgb(145, 145, 145);
-  cursor: pointer;
-}
-
 .greeting {
   font-size: 24px;
-  font-family: "Cardo", serif;
-  text-transform: uppercase;
 }

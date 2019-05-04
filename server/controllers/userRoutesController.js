@@ -1,6 +1,18 @@
 module.exports = {
   saveUserRoute: async (req, res) => {
-    const { strtAdd, endAdd, strtLat, strtLng, endLat, endLng, id } = req.body;
+    const {
+      strtAdd,
+      endAdd,
+      strtLat,
+      strtLng,
+      endLat,
+      endLng,
+      description,
+      duration,
+      distance,
+      steps,
+      id
+    } = req.body;
     let db = await req.app.get("db");
     let userRoutes = await db.save_user_route([
       strtAdd,
@@ -9,13 +21,18 @@ module.exports = {
       strtLng,
       endLat,
       endLng,
+      description,
+      duration,
+      distance,
+      steps,
       id
     ]);
+    console.log("BACK END RES ---->", userRoutes);
     return res
       .status(200)
       .send(userRoutes)
       .catch(err => {
-        err;
+        alert(err);
       });
   },
 
