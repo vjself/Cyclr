@@ -4,7 +4,6 @@ import { withScriptjs } from "react-google-maps";
 import DescModal from "../../DescModal/DescModal";
 import Steps from "../../Steps/Steps";
 import DescInput from "../../DescModal/DescInput/DescInput";
-// import Steps from "../../Steps/Steps";
 import "./userRoutesDisplay.css";
 
 export default class UserRoutesDisplay extends Component {
@@ -30,8 +29,20 @@ export default class UserRoutesDisplay extends Component {
   };
 
   render() {
+    let instruc = this.props.routes[0].steps;
+    let instruc2 = instruc.map(e => {
+      return JSON.parse(e);
+    });
+    let userStepInfo = instruc2.map(e => {
+      return (
+        <Steps
+          instructions={e.stepInstruc}
+          distance={e.stepDistance}
+          duration={e.stepDuration}
+        />
+      );
+    });
     const MapLoader = withScriptjs(Mapper);
-    console.log(this.props.instructions.distance);
     return (
       <div className="user-maps-display">
         <span className="addy-display" onClick={this.showMap}>{`${
@@ -53,6 +64,8 @@ export default class UserRoutesDisplay extends Component {
         </DescModal>
         {this.state.showMap === true && (
           <div className="map">
+            <span className="addy-display">{this.props.routes.distance}</span>
+            <span className="addy-display">{this.props.routes.duration}</span>
             <div className="map-window2">
               <MapLoader
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
@@ -65,17 +78,14 @@ export default class UserRoutesDisplay extends Component {
                 endLng={this.props.endLng}
               />
             </div>
-            {!this.props.description ? (
-              <div />
-            ) : (
-              <div className="descrip" type="text-box">
-                <br />
-                {this.props.description} <br />
-              </div>
-            )}
-            <div className="steps-box">
-              <Steps instructions={this.props.instructions} />
-            </div>
+            <div className="steps-box2">{userStepInfo}</div>
+          </div>
+        )}
+        {!this.props.description ? (
+          <div />
+        ) : (
+          <div className="descrip" type="text-box">
+            {this.props.description} <br />
           </div>
         )}
       </div>

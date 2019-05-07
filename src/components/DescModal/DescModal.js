@@ -22,15 +22,16 @@ class DescModal extends React.Component {
     const modalStyle = {
       backgroundColor: "#fff",
       borderRadius: 5,
+      width: "50%",
+      height: "50%",
       maxWidth: 500,
       minHeight: 300,
       margin: "0 auto",
       padding: 30
     };
-
+    console.log(this.props);
     return (
       <div className="backdrop" style={{ backdropStyle }}>
-        {console.log(this.props.children)}
         <div className="modal" style={{ modalStyle }}>
           {this.props.children}
         </div>

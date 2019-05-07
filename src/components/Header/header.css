@@ -5,14 +5,12 @@ header {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
 }
 
 img {
   width: 30%;
   height: 80px;
-
-  /* reverses background color */
-  /* -webkit-filter: brightness(1) contrast(300%) invert(1); */
 }
 
 .login-controls {

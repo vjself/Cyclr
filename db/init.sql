@@ -23,7 +23,8 @@ CREATE TABLE routes
    description TEXT,
    duration TEXT,
    distance TEXT,
-   steps TEXT,
+   steps TEXT
+   [],
    user_id INTEGER REFERENCES users
    (id)
 );

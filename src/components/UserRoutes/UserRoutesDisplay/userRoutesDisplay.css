@@ -1,31 +1,27 @@
 .descrip {
   color: white;
+  margin: 20px 0;
 }
 
-.steps-box {
-  height: 600px;
-  width: 300px;
+.steps-box2 {
+  height: 500px;
+  width: 400px;
   overflow: scroll;
   color: black;
   font-size: 20px;
   color: white;
   background-color: rgba(0, 0, 0, 0.534);
+  margin-right: 75px;
+  margin-top: 50px;
 }
 
 .map {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
   flex-direction: row;
-  height: 100vh;
+  align-items: center;
   width: 100vw;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: -10px;
+  justify-content: space-evenly;
 }
 .map-window2 {
-  width: 60%;
-  height: 100%;
-  margin-top: 50px;
-  margin-left: 100px;
+  width: 100%;
 }

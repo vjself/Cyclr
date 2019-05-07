@@ -9,6 +9,7 @@ const SAVE_USER_ROUTE = "SAVE_USER_ROUTE";
 const GET_USER_ROUTES = "GET_USER_ROUTES";
 const DELETE_USER_ROUTE = "DELETE_USER_ROUTE";
 const UPDATE_USER_ROUTE = "UPDATE_USER_ROUTE";
+const LOGOUT = "LOGOUT";
 
 export default function reducer(state = initialState, action) {
   let { payload } = action;
@@ -25,6 +26,12 @@ export default function reducer(state = initialState, action) {
       return { ...state, userRoutes: payload };
     case UPDATE_USER_ROUTE:
       return { ...state, userRoutes: payload };
+    case LOGOUT:
+      return {
+        user: {},
+        userRoutes: []
+      };
+
     default:
       return state;
   }
@@ -41,6 +48,12 @@ export function register(user) {
   return {
     type: REGISTER,
     payload: user
+  };
+}
+
+export function logout() {
+  return {
+    type: LOGOUT
   };
 }
 

@@ -96,7 +96,7 @@ export default class Mapper extends Component {
     return (
       <div className="map-container">
         <UserMap
-          containerElement={<div style={{ height: `500px` }} />}
+          containerElement={<div style={{ height: `500px`, width: `100%` }} />}
           mapElement={<div style={{ height: `100%` }} />}
         />
       </div>

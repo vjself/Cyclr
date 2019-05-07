@@ -30,7 +30,7 @@ class Login extends Component {
         this.setState({ username: "", password: "" });
         this.props.history.push("/route");
       })
-      .catch(err => alert(err.response.request.response));
+      .catch(err => alert(err));
   };
 
   render() {

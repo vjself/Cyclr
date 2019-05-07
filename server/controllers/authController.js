@@ -58,10 +58,12 @@ module.exports = {
     });
   },
 
-  logout: (req, res, next) => {
+  logout: (req, res) => {
     req.session.destroy();
-    res.status(200).catch(err => {
-      err;
-    });
+    res.sendStatus(200);
+  },
+
+  getCurrentUser: (req, res) => {
+    res.send(req.session.user);
   }
 };

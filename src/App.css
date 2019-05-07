@@ -3,7 +3,7 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
   text-rendering: optimizeLegibility !important;
   -webkit-font-smoothing: antialiased !important;
   height: 100vh;
@@ -15,9 +15,9 @@
   scroll-behavior: smooth;
 }
 
-a {
+/* a {
   color: inherit !important;
-}
+} */
 
 a :hover {
   text-decoration: underline;
@@ -25,11 +25,20 @@ a :hover {
 
 .outer-cont {
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
+  background-image: none;
   width: 100vw;
   height: 100vh;
   overflow: auto;
   margin: 0 auto;
+}
+
+/* makes autofill background transparent */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: #fff !important;
 }

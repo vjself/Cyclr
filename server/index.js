@@ -11,7 +11,6 @@ const cookieParser = require("cookie-parser");
 const MemoryStore = require("memorystore")(session);
 app.use(cookieParser());
 app.use(express.json());
-app.use(require("body-parser").text());
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -20,7 +19,6 @@ massive(CONNECTION_STRING).then(db => {
   console.log("DB online.");
 });
 
-app.use(cookieParser());
 app.use(
   session({
     resave: true,
@@ -33,10 +31,11 @@ app.use(
 //AUTH
 app.post("/auth/register", aC.register);
 app.post("/auth/login", aC.login);
-app.get("/auth/logout", aC.logout);
+app.post("/auth/logout", aC.logout);
+app.get("/auth/user", aC.getCurrentUser);
 
 //Stripe
-app.post("/api/save-stripe-token", dC.onToken);
+app.post("/api/token", dC.getToken);
 
 //Directions
 app.post("/api/route", gC.getDirections);

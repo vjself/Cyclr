@@ -10,7 +10,7 @@ module.exports = {
       description,
       duration,
       distance,
-      steps,
+      newStep,
       id
     } = req.body;
     let db = await req.app.get("db");
@@ -24,10 +24,9 @@ module.exports = {
       description,
       duration,
       distance,
-      steps,
+      newStep,
       id
     ]);
-    console.log("BACK END RES ---->", userRoutes);
     return res
       .status(200)
       .send(userRoutes)

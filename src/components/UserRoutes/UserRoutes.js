@@ -41,7 +41,8 @@ class UserRoutes extends Component {
   };
 
   render() {
-    let routeInstance = this.props.userRoutes.map(e => {
+    console.log(this.props.userRoutes);
+    let routeInstance = this.props.userRoutes.map((e, i) => {
       return (
         <UserRoutesDisplay
           key={e.id}

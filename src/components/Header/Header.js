@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./header.css";
 import logo from "./headerLogo.png";
 import { connect } from "react-redux";
-import { NavLink } from "react-router-dom";
+import { logout, login } from "../../redux/reducer";
+import { NavLink, withRouter } from "react-router-dom";
 import axios from "axios";
 
 class Header extends Component {
@@ -12,18 +13,24 @@ class Header extends Component {
     this.state = {};
   }
 
-  logout() {
-    axios.get("/auth/logout").then(user => {
-      user.status(200).send(user);
+  componentDidMount() {
+    axios.get("/auth/user").then(res => {
+      this.props.login(res.data);
     });
   }
 
+  logoutFn = () => {
+    axios.post("/auth/logout").then(() => {
+      this.props.logout();
+      this.props.history.push("/login");
+    });
+  };
+
   render() {
-    console.log(this.props.user);
     return (
       <header>
         <img src={logo} alt="" />
-        {!this.props.user ? (
+        {!this.props.user.hasOwnProperty("id") ? (
           <ul className="login-controls">
             <li>
               <NavLink exact to="/login">
@@ -45,8 +52,8 @@ class Header extends Component {
             <li>
               <NavLink to="/userRoutes">Your Routes</NavLink>
             </li>
-            {this.props.user.id ? (
-              <li onClick={this.logout}>
+            {this.props.user.hasOwnProperty("id") ? (
+              <li onClick={() => this.logoutFn()}>
                 <a>Logout</a>
               </li>
             ) : (
@@ -63,11 +70,19 @@ class Header extends Component {
 
 const mapStateToProps = reduxState => {
   return {
-    user: reduxState.user
+    user: reduxState.user,
+    userRoutes: reduxState.userRoutes
   };
 };
 
-export default connect(
-  mapStateToProps,
-  null
-)(Header);
+const mapDispatchToProps = {
+  logout: logout,
+  login: login
+};
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Header)
+);
