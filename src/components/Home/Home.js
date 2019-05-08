@@ -5,10 +5,10 @@ import "./home.css";
 export default function Home() {
   return (
     <section className="welcome-pic">
-      <div className="text">DON'T GET LOST AGAIN</div>
+      <div className="text">FIND A BETTER PATH.</div>
       <div className="big-text">Map, examine, and archive your bike rides.</div>
       <div className="sign-up-link">
-        Not a user?
+        Don't have an account?
         <br />
         <NavLink to="/register">
           <button className="sign-up-btn">Sign Up!</button>

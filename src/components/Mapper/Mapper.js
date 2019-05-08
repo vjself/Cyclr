@@ -7,6 +7,7 @@ import {
   DirectionsRenderer,
   Marker,
   BicyclingLayer
+  // DrawingManager
 } from "react-google-maps";
 
 export default class Mapper extends Component {
@@ -53,7 +54,10 @@ export default class Mapper extends Component {
     let lng = e.latLng.lng();
     let markers = this.state.markerPositions.slice();
     markers.push({ lat, lng });
-    this.setState({ markerPositions: markers, isMarkerShown: true });
+    this.setState({
+      markerPositions: markers,
+      isMarkerShown: !this.state.isMarkerShown
+    });
   };
 
   addWaypoint = waypoint => {
@@ -65,6 +69,7 @@ export default class Mapper extends Component {
   };
 
   render() {
+    console.log("G-maps -->>> ", google.maps);
     const { strtLat, strtLng } = this.props;
     const UserMap = withGoogleMap(() => (
       <GoogleMap
@@ -83,14 +88,34 @@ export default class Mapper extends Component {
                 key={marker.id}
                 position={{ lat: marker.lat, lng: marker.lng }}
                 draggable={true}
-                // onClick={e => {
-                //   this.removeMarker(e);
-                // }}
               >
                 <div>{this.state.selectedMarker}</div>}
               </Marker>
             );
           })}
+        {/* <DrawingManager
+          defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}
+          defaultOptions={{
+            drawingControl: true,
+            drawingControlOptions: {
+              position: google.maps.ControlPosition.TOP_CENTER,
+              drawingModes: [
+                google.maps.drawing.OverlayType.CIRCLE,
+                google.maps.drawing.OverlayType.POLYGON,
+                google.maps.drawing.OverlayType.POLYLINE,
+                google.maps.drawing.OverlayType.RECTANGLE
+              ]
+            },
+            circleOptions: {
+              fillColor: `#ffff00`,
+              fillOpacity: 1,
+              strokeWeight: 5,
+              clickable: false,
+              editable: true,
+              zIndex: 1
+            }
+          }}
+        /> */}
       </GoogleMap>
     ));
     return (

@@ -8,7 +8,7 @@ export default class Donate extends Component {
     super(props);
 
     this.state = {
-      amount: 0
+      amount: null
     };
   }
 
@@ -18,12 +18,19 @@ export default class Donate extends Component {
     });
   };
 
+  clearInput = () => {
+    this.setState({
+      amount: 0
+    });
+  };
+
   onToken = token => {
     axios
       .post("/api/token", { stripeToken: token.id, amount: this.state.amount })
       .then(res => {
         console.log(res.data);
       });
+    this.clearInput();
   };
 
   render() {
@@ -35,6 +42,7 @@ export default class Donate extends Component {
         <input
           type="number"
           placeholder="Amount?"
+          value={this.state.amount}
           onChange={e => {
             this.handleAmount(e.target.value);
           }}
@@ -44,7 +52,7 @@ export default class Donate extends Component {
           name="Cyclr"
           description="Make a donation!"
           panelLabel="Make Donation!"
-          amount={this.state.amount * 100}
+          amount={("$", this.state.amount * 100)}
           token={this.onToken}
           stripeKey="pk_test_p2MAU1TM7HtDrsc3I8CMPixO00xwxYt5LU"
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgoS83usvxagVAfmgo2f9cQW8e6ds6Yp25xCqz96Io8GQVrevGZg"

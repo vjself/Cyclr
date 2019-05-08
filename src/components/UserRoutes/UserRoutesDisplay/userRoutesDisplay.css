@@ -4,14 +4,15 @@
 }
 
 .steps-box2 {
-  height: 500px;
-  width: 400px;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 400px;
   overflow: scroll;
   color: black;
   font-size: 20px;
   color: white;
-  background-color: rgba(0, 0, 0, 0.534);
-  margin-right: 75px;
+  margin-right: 200px;
   margin-top: 50px;
 }
 
@@ -24,4 +25,5 @@
 }
 .map-window2 {
   width: 100%;
+  margin-left: 100px;
 }

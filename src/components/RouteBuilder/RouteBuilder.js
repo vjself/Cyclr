@@ -51,6 +51,7 @@ class RouteBuilder extends Component {
 
   render() {
     const { route } = this.state;
+    console.log(route);
     var newStep =
       route.length &&
       route[0].legs[0].steps.map(e => {
@@ -58,7 +59,6 @@ class RouteBuilder extends Component {
         var second = this.htmlr2(first);
         return second;
       });
-    console.log("NEWSTEP --> ", newStep);
     const steps =
       route.length &&
       route[0].legs[0].steps.map((e, i) => {
@@ -70,7 +70,6 @@ class RouteBuilder extends Component {
           />
         );
       });
-    console.log("STEPS --> ", steps);
     const saveSteps =
       route.length &&
       route[0].legs[0].steps.map((e, i) => {

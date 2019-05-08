@@ -48,11 +48,16 @@ export default class UserRoutesDisplay extends Component {
         <span className="addy-display" onClick={this.showMap}>{`${
           this.props.strtAdd
         } to ${this.props.endAdd}`}</span>
+
         <button
           className="delete-button"
           onClick={() => this.props.deleteRouteFn(this.props.id)}
         />
         <button onClick={this.toggleDescModal} className="edit-button" />
+        <br />
+        <span className="dist-display">Distance - {this.props.distance}</span>
+        <br />
+        <span className="dist-display">Duration - {this.props.duration}</span>
         <DescModal
           show={this.state.openDescModal}
           onClose={this.toggleDescModal}
@@ -64,8 +69,8 @@ export default class UserRoutesDisplay extends Component {
         </DescModal>
         {this.state.showMap === true && (
           <div className="map">
-            <span className="addy-display">{this.props.routes.distance}</span>
-            <span className="addy-display">{this.props.routes.duration}</span>
+            {/* {" "}
+            <div className="step-disp">Step by step: </div> */}
             <div className="map-window2">
               <MapLoader
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${

@@ -41,7 +41,6 @@ class UserRoutes extends Component {
   };
 
   render() {
-    console.log(this.props.userRoutes);
     let routeInstance = this.props.userRoutes.map((e, i) => {
       return (
         <UserRoutesDisplay
@@ -53,6 +52,8 @@ class UserRoutes extends Component {
           strtLng={e.strt_lng}
           endLat={e.end_lat}
           endLng={e.end_lng}
+          distance={e.distance}
+          duration={e.duration}
           description={e.description}
           instructions={e.steps}
           id={e.id}

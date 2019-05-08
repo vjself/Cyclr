@@ -15,9 +15,9 @@
   scroll-behavior: smooth;
 }
 
-/* a {
+a {
   color: inherit !important;
-} */
+}
 
 a :hover {
   text-decoration: underline;
@@ -40,5 +40,5 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
-  -webkit-text-fill-color: #fff !important;
+  -webkit-text-fill-color: #fff;
 }

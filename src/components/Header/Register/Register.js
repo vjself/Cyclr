@@ -54,6 +54,7 @@ class Register extends Component {
         });
         alert(err.response.request.response);
       });
+    this.props.history.push("/login");
   };
 
   render() {
@@ -62,7 +63,7 @@ class Register extends Component {
       <section className="reg-cont">
         <div className="welcome">Welcome to Cyclr!</div>
         <div className="welcome">
-          Already a user? Log in <NavLink to="/login">here.</NavLink>
+          Already have and account? Log in <NavLink to="/login">here.</NavLink>
         </div>
         <div className="register">
           <form className="reg-form" onSubmit={e => e.preventDefault()}>

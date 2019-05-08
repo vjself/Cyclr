@@ -67,6 +67,7 @@
   color: #e2e6ee;
   margin: 0 40px;
   transition: all 0.15s ease;
+  z-index: 4;
 }
 .inp input:hover {
   background: rgba(34, 50, 84, 0.03);
@@ -153,9 +154,10 @@
 }
 
 .inner-map-w {
-  width: 100%;
+  width: 80%;
   display: flex;
   margin-top: 50px;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 30px;
 }
