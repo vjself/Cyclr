@@ -36,35 +36,37 @@ class Login extends Component {
   render() {
     return (
       <section className="login">
-        <span>LOG IN</span>
-        <br />
-        <br />
-        <br />
-        <div className="welcome">
-          Need an account? <NavLink to="/register">Create one here!</NavLink>
+        <div className="inner-div">
+          <span>LOG IN</span>
+          <br />
+          <br />
+          <br />
+          <div className="welcome">
+            Need an account? <NavLink to="/register">Create one here!</NavLink>
+          </div>
+          <br />
+          <br />
+          <input
+            name="username"
+            value={this.state.username}
+            type="text"
+            placeholder="Username..."
+            onChange={e => this.changeHandler(e.target.name, e.target.value)}
+          />
+          <br />
+          <input
+            name="password"
+            value={this.state.password}
+            type="password"
+            placeholder="Password..."
+            onChange={e => this.changeHandler(e.target.name, e.target.value)}
+          />
+          <br />
+          <br />
+          <button className="login-button" onClick={this.login}>
+            Login
+          </button>
         </div>
-        <br />
-        <br />
-        <input
-          name="username"
-          value={this.state.username}
-          type="text"
-          placeholder="Username..."
-          onChange={e => this.changeHandler(e.target.name, e.target.value)}
-        />
-        <br />
-        <input
-          name="password"
-          value={this.state.password}
-          type="password"
-          placeholder="Password..."
-          onChange={e => this.changeHandler(e.target.name, e.target.value)}
-        />
-        <br />
-        <br />
-        <button className="login-button" onClick={this.login}>
-          Login
-        </button>
       </section>
     );
   }

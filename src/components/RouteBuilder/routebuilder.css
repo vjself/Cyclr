@@ -98,7 +98,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 55.7vh;
+  margin-top: 328px;
   width: 100vw;
   background-image: url("https://images8.alphacoders.com/681/681196.jpg");
   background-size: cover;
@@ -151,6 +151,7 @@
 
 .dist {
   margin-top: 100px;
+  margin-right: 500px;
 }
 
 .inner-map-w {

@@ -6,7 +6,9 @@ export default function Home() {
   return (
     <section className="welcome-pic">
       <div className="text">FIND A BETTER PATH.</div>
-      <div className="big-text">Map, examine, and archive your bike rides.</div>
+      <div className="big-text">
+        Map, examine, and archive your bike rides, as well as others.
+      </div>
       <div className="sign-up-link">
         Don't have an account?
         <br />

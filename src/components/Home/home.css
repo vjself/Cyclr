@@ -16,7 +16,7 @@
   max-width: 640px;
   margin: 0 auto;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.438);
 }
 .sign-up-link {
   font-size: 16px;
@@ -25,7 +25,7 @@
   max-width: 640px;
   margin: 0 auto;
   margin-bottom: 20px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.438);
 }
 
 .big-text {
@@ -35,7 +35,7 @@
   max-width: 640px;
   margin: 0 auto;
   margin-bottom: 44px;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+  text-shadow: 5px 3px 5px rgba(0, 0, 0, 0.438);
 }
 
 .sign-up-btn {

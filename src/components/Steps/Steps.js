@@ -4,8 +4,6 @@ import "./steps.css";
 export default class Steps extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {};
   }
 
   render() {

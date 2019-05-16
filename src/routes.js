@@ -5,6 +5,7 @@ import Register from "./components/Header/Register/Register";
 import UserRoutes from "./components/UserRoutes/UserRoutes";
 import Donate from "./components/Donate/Donate";
 import RouteBuilder from "./components/RouteBuilder/RouteBuilder";
+import Community from "./components/Community/Community";
 import Home from "./components/Home/Home";
 export default (
   <Switch>
@@ -14,5 +15,6 @@ export default (
     <Route component={Donate} path="/donate" />
     <Route component={UserRoutes} path="/userRoutes" />
     <Route component={Register} path="/register" />
+    <Route component={Community} path="/community" />
   </Switch>
 );

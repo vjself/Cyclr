@@ -5,9 +5,7 @@ import {
   withGoogleMap,
   GoogleMap,
   DirectionsRenderer,
-  Marker,
   BicyclingLayer
-  // DrawingManager
 } from "react-google-maps";
 
 export default class Mapper extends Component {
@@ -15,9 +13,6 @@ export default class Mapper extends Component {
     super(props);
     this.state = {
       directions: {},
-      isMarkerShown: false,
-      markerPositions: [],
-      selectedMarker: [],
       waypoints: []
     };
   }
@@ -49,17 +44,6 @@ export default class Mapper extends Component {
     );
   }
 
-  addMarker = e => {
-    let lat = e.latLng.lat();
-    let lng = e.latLng.lng();
-    let markers = this.state.markerPositions.slice();
-    markers.push({ lat, lng });
-    this.setState({
-      markerPositions: markers,
-      isMarkerShown: !this.state.isMarkerShown
-    });
-  };
-
   addWaypoint = waypoint => {
     let lat = waypoint.latLng.lat();
     let lng = waypoint.latLng.lng();
@@ -72,50 +56,12 @@ export default class Mapper extends Component {
     console.log("G-maps -->>> ", google.maps);
     const { strtLat, strtLng } = this.props;
     const UserMap = withGoogleMap(() => (
-      <GoogleMap
-        defaultCenter={{ lat: strtLat, lng: strtLng }}
-        onClick={e => this.addMarker(e)}
-      >
+      <GoogleMap defaultCenter={{ lat: strtLat, lng: strtLng }}>
         <BicyclingLayer autoupdate />
         <DirectionsRenderer
           clickable={true}
           directions={this.state.directions}
         />
-        {this.state.isMarkerShown &&
-          this.state.markerPositions.map(marker => {
-            return (
-              <Marker
-                key={marker.id}
-                position={{ lat: marker.lat, lng: marker.lng }}
-                draggable={true}
-              >
-                <div>{this.state.selectedMarker}</div>}
-              </Marker>
-            );
-          })}
-        {/* <DrawingManager
-          defaultDrawingMode={google.maps.drawing.OverlayType.CIRCLE}
-          defaultOptions={{
-            drawingControl: true,
-            drawingControlOptions: {
-              position: google.maps.ControlPosition.TOP_CENTER,
-              drawingModes: [
-                google.maps.drawing.OverlayType.CIRCLE,
-                google.maps.drawing.OverlayType.POLYGON,
-                google.maps.drawing.OverlayType.POLYLINE,
-                google.maps.drawing.OverlayType.RECTANGLE
-              ]
-            },
-            circleOptions: {
-              fillColor: `#ffff00`,
-              fillOpacity: 1,
-              strokeWeight: 5,
-              clickable: false,
-              editable: true,
-              zIndex: 1
-            }
-          }}
-        /> */}
       </GoogleMap>
     ));
     return (

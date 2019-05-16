@@ -72,5 +72,15 @@ module.exports = {
       .catch(err => {
         err;
       });
+  },
+
+  community: async (req, res) => {
+    let userRoutes = await req.app.get("db").get_all_user_routes();
+    return res
+      .status(200)
+      .send(userRoutes)
+      .catch(err => {
+        err;
+      });
   }
 };

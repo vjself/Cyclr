@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { saveUserRoute } from "../../../redux/reducer";
-import { ScrollTo } from "react-scroll-to";
 import axios from "axios";
 
 class SaveRoute extends Component {
@@ -48,11 +47,9 @@ class SaveRoute extends Component {
   render() {
     return (
       <div>
-        <ScrollTo>
-          <button className="save-route-btn" onClick={this.saveUserRoute}>
-            Save Route
-          </button>
-        </ScrollTo>
+        <button className="save-route-btn" onClick={this.saveUserRoute}>
+          Save Route
+        </button>
       </div>
     );
   }

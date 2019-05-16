@@ -11,6 +11,7 @@ const cookieParser = require("cookie-parser");
 const MemoryStore = require("memorystore")(session);
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static(`${__dirname}/../build`));
 
 const { CONNECTION_STRING, SESSION_SECRET } = process.env;
 
@@ -42,6 +43,7 @@ app.post("/api/route", gC.getDirections);
 
 //User Routes
 app.get("/api/userRoutes", uC.getUserRoutes);
+app.get("/api/community", uC.community);
 app.post("/api/userRoutes", uC.saveUserRoute);
 app.put("/api/userRoutes/:id", uC.updateDescription);
 app.delete("/api/userRoutes/:id", uC.deleteUserRoute);
@@ -50,4 +52,9 @@ const PORT = process.env.SERVER_PORT;
 
 app.listen(PORT, () => {
   console.log(`Server just popped off on ${PORT}.`);
+});
+
+const path = require("path");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
 });

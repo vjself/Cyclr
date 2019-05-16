@@ -1,30 +1,18 @@
 import React, { Component } from "react";
 import Mapper from "../../Mapper/Mapper";
 import { withScriptjs } from "react-google-maps";
-import DescModal from "../../DescModal/DescModal";
 import Steps from "../../Steps/Steps";
-import DescInput from "../../DescModal/DescInput/DescInput";
-import "./userRoutesDisplay.css";
+import "../../UserRoutes/UserRoutesDisplay/userRoutesDisplay.css";
 
-export default class UserRoutesDisplay extends Component {
+export default class CommunityDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showEdit: false,
-      showMap: false,
-      openDescModal: false
-    };
+    this.state = {};
   }
 
   showMap = () => {
     this.setState({
       showMap: !this.state.showMap
-    });
-  };
-
-  toggleDescModal = () => {
-    this.setState({
-      openDescModal: !this.state.openDescModal
     });
   };
 
@@ -49,25 +37,10 @@ export default class UserRoutesDisplay extends Component {
         <span className="addy-display" onClick={this.showMap}>{`${
           this.props.strtAdd
         } to ${this.props.endAdd}`}</span>
-
-        <button
-          className="delete-button"
-          onClick={() => this.props.deleteRouteFn(this.props.id)}
-        />
-        <button onClick={this.toggleDescModal} className="edit-button" />
         <br />
-        <span className="dist-display">Distance - {this.props.distance}</span>
+        <span className="dist-display">User - {this.props.username}</span>
         <br />
-        <span className="dist-display">Duration - {this.props.duration}</span>
-        <DescModal
-          show={this.state.openDescModal}
-          onClose={this.toggleDescModal}
-        >
-          <DescInput
-            updateRouteFn={this.props.updateRouteFn}
-            id={this.props.id}
-          />
-        </DescModal>
+        <span className="dist-display">Name - {this.props.firstName}</span>
         {this.state.showMap === true && (
           <div className="map">
             {" "}

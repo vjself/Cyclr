@@ -7,6 +7,7 @@ import axios from "axios";
 import { withScriptjs } from "react-google-maps";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+// import scrollToComponent from "react-scroll-to-component";
 
 class RouteBuilder extends Component {
   constructor(props) {
@@ -35,6 +36,9 @@ class RouteBuilder extends Component {
         destination: ""
       });
     });
+    // scrollToComponent(this.refs.dist, {
+    //   duration: 1500
+    // });
   };
 
   htmlr = str => {
@@ -51,7 +55,6 @@ class RouteBuilder extends Component {
 
   render() {
     const { route } = this.state;
-    console.log(route);
     var newStep =
       route.length &&
       route[0].legs[0].steps.map(e => {
@@ -82,7 +85,7 @@ class RouteBuilder extends Component {
     const MapLoader = withScriptjs(Mapper);
     return (
       <div className="search-cont">
-        {this.props.user[0] && (
+        {this.props.user.hasOwnProperty("id") && (
           <li className="greeting">{`Welcome back ${
             this.props.user.first_name
           }!`}</li>
@@ -113,15 +116,15 @@ class RouteBuilder extends Component {
               <span className="label">Destination...</span>
               <span className="border" />
             </label>
-            {!this.state.route.length > 0 && (
-              <div className="submit-route">
-                <button className="go-button" onClick={this.getDirections}>
-                  Go
-                </button>
-              </div>
-            )}
+
+            <div className="submit-route">
+              <button className="go-button" onClick={this.getDirections}>
+                Go
+              </button>
+            </div>
+
             {this.state.route.length > 0 && (
-              <div ref={this.mapWindow} className="map-window">
+              <div className="map-window">
                 <div className="dist">
                   <span>Distance - {route[0].legs[0].distance.text}</span>
                   <br />

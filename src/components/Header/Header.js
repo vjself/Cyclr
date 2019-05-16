@@ -22,15 +22,16 @@ class Header extends Component {
   logoutFn = () => {
     axios.post("/auth/logout").then(() => {
       this.props.logout();
-      this.props.history.push("/login");
+      this.props.history.push("/");
     });
   };
 
   render() {
+    console.log(this.props);
     return (
       <header>
         <img src={logo} alt="" />
-        {!this.props.user.hasOwnProperty("id") ? (
+        {!this.props.user.id ? (
           <ul className="login-controls">
             <li>
               <NavLink exact to="/login">
@@ -52,7 +53,10 @@ class Header extends Component {
             <li>
               <NavLink to="/userRoutes">Your Routes</NavLink>
             </li>
-            {this.props.user.hasOwnProperty("id") ? (
+            <li>
+              <NavLink to="/community">Community</NavLink>
+            </li>
+            {this.props.user.id ? (
               <li onClick={() => this.logoutFn()}>
                 <a>Logout</a>
               </li>
