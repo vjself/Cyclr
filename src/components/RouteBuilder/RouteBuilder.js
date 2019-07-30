@@ -27,8 +27,12 @@ class RouteBuilder extends Component {
   };
 
   scroller = () => {
-    window.scrollTo(0, -1000);
-    alert("Scroll down to directions until bugfix.");
+    let scrollToBottom = () => {
+      this.target.scrollIntoView({ behavior: "smooth" });
+    };
+    setTimeout(() => {
+      scrollToBottom();
+    }, 500);
   };
 
   getDirections = (origin, dest) => {
@@ -139,7 +143,12 @@ class RouteBuilder extends Component {
                   <br />
                   <span>Time - {route[0].legs[0].duration.text}</span>
                 </div>
-                <div className="inner-map-w">
+                <div
+                  className="inner-map-w"
+                  ref={el => {
+                    this.target = el;
+                  }}
+                >
                   <MapLoader
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
                       process.env.REACT_APP_API_KEY
