@@ -38,9 +38,11 @@ export default class CommunityDisplay extends Component {
           this.props.strtAdd
         } to ${this.props.endAdd}`}</span>
         <br />
-        <span className="dist-display">User - {this.props.username}</span>
+        <span className="dist-display">
+          Submitted by - {this.props.username}
+        </span>
         <br />
-        <span className="dist-display">Name - {this.props.firstName}</span>
+
         {this.state.showMap === true && (
           <div className="map">
             {" "}

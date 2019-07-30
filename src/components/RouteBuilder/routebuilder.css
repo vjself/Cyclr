@@ -14,7 +14,7 @@
   width: 100%;
   font-size: 30px;
   line-height: 35px;
-  margin-top: 350px;
+  margin-top: 175px;
   overflow: wrap;
   height: 70px;
   padding: 10px;
@@ -98,7 +98,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 328px;
+  margin-top: 318px;
   width: 100vw;
   background-image: url("https://images8.alphacoders.com/681/681196.jpg");
   background-size: cover;
@@ -138,6 +138,7 @@
 
 .save-route-btn {
   margin-right: 450px;
+  margin-bottom: 20px;
 }
 
 .greeting {

@@ -26,6 +26,6 @@ CREATE TABLE routes
    steps TEXT
    [],
    user_id INTEGER REFERENCES users
-   (id)
+   (user_id)
 );
 

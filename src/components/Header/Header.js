@@ -48,13 +48,13 @@ class Header extends Component {
               <NavLink to="/route">Find Route</NavLink>
             </li>
             <li>
-              <NavLink to="/donate">Donate</NavLink>
-            </li>
-            <li>
               <NavLink to="/userRoutes">Your Routes</NavLink>
             </li>
             <li>
               <NavLink to="/community">Community</NavLink>
+            </li>
+            <li>
+              <NavLink to="/donate">Donate</NavLink>
             </li>
             {this.props.user.id ? (
               <li onClick={() => this.logoutFn()}>

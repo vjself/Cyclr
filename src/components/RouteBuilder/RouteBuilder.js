@@ -26,9 +26,15 @@ class RouteBuilder extends Component {
     });
   };
 
+  scroller = () => {
+    window.scrollTo(0, -1000);
+    alert("Scroll down to directions until bugfix.");
+  };
+
   getDirections = (origin, dest) => {
     origin = this.state.origin;
     dest = this.state.destination;
+    this.scroller();
     axios.post("/api/route", { origin, dest }).then(res => {
       this.setState({
         route: res.data.routes,
@@ -36,9 +42,6 @@ class RouteBuilder extends Component {
         destination: ""
       });
     });
-    // scrollToComponent(this.refs.dist, {
-    //   duration: 1500
-    // });
   };
 
   htmlr = str => {
@@ -62,6 +65,7 @@ class RouteBuilder extends Component {
         var second = this.htmlr2(first);
         return second;
       });
+
     const steps =
       route.length &&
       route[0].legs[0].steps.map((e, i) => {
@@ -73,6 +77,7 @@ class RouteBuilder extends Component {
           />
         );
       });
+
     const saveSteps =
       route.length &&
       route[0].legs[0].steps.map((e, i) => {
@@ -82,7 +87,9 @@ class RouteBuilder extends Component {
           stepInstruc: newStep[i]
         };
       });
+
     const MapLoader = withScriptjs(Mapper);
+
     return (
       <div className="search-cont">
         {this.props.user.hasOwnProperty("id") && (
@@ -90,6 +97,7 @@ class RouteBuilder extends Component {
             this.props.user.first_name
           }!`}</li>
         )}
+
         {this.props.user.hasOwnProperty("id") ? (
           <div className="input-section">
             <label htmlFor="inp" className="inp">
@@ -104,6 +112,7 @@ class RouteBuilder extends Component {
               <span className="label">Origin...</span>
               <span className="border" />
             </label>
+
             <label htmlFor="inp" className="inp">
               <input
                 onChange={e =>
