@@ -53,9 +53,7 @@ module.exports = {
       last_name: user.last_name,
       username: user.username
     };
-    return res.send(req.session.user).catch(err => {
-      err;
-    });
+    return res.send(req.session.user);
   },
 
   logout: (req, res) => {

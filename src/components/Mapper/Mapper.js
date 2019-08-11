@@ -53,7 +53,6 @@ export default class Mapper extends Component {
   };
 
   render() {
-    console.log("G-maps -->>> ", google.maps);
     const { strtLat, strtLng } = this.props;
     const UserMap = withGoogleMap(() => (
       <GoogleMap defaultCenter={{ lat: strtLat, lng: strtLng }}>

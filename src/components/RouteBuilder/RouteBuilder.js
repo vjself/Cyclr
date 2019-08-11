@@ -1,4 +1,13 @@
 import React, { Component } from "react";
+import * as Scroll from "react-scroll";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller
+} from "react-scroll";
 import Mapper from "../Mapper/Mapper";
 import SaveRoute from "./SaveRoute/SaveRoute";
 import Steps from "../Steps/Steps";
@@ -26,19 +35,13 @@ class RouteBuilder extends Component {
     });
   };
 
-  scroller = () => {
-    let scrollToBottom = () => {
-      this.target.scrollIntoView({ behavior: "smooth" });
-    };
-    setTimeout(() => {
-      scrollToBottom();
-    }, 500);
+  scrollToBottom = () => {
+    scroll.scrollTo(1878);
   };
 
   getDirections = (origin, dest) => {
     origin = this.state.origin;
     dest = this.state.destination;
-    this.scroller();
     axios.post("/api/route", { origin, dest }).then(res => {
       this.setState({
         route: res.data.routes,
@@ -46,6 +49,8 @@ class RouteBuilder extends Component {
         destination: ""
       });
     });
+    // alert("Scroll down to see directions.");
+    this.scrollToBottom();
   };
 
   htmlr = str => {
@@ -75,6 +80,7 @@ class RouteBuilder extends Component {
       route[0].legs[0].steps.map((e, i) => {
         return (
           <Steps
+            key={i}
             distance={e.distance.text}
             duration={e.duration.text}
             instructions={newStep[i]}
@@ -93,7 +99,7 @@ class RouteBuilder extends Component {
       });
 
     const MapLoader = withScriptjs(Mapper);
-
+    this.state.route.length > 0 && scroll.scrollToBottom();
     return (
       <div className="search-cont">
         {this.props.user.hasOwnProperty("id") && (
@@ -143,12 +149,7 @@ class RouteBuilder extends Component {
                   <br />
                   <span>Time - {route[0].legs[0].duration.text}</span>
                 </div>
-                <div
-                  className="inner-map-w"
-                  ref={el => {
-                    this.target = el;
-                  }}
-                >
+                <div className="inner-map-w">
                   <MapLoader
                     googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
                       process.env.REACT_APP_API_KEY

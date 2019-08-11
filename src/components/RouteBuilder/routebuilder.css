@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://www.sierraclub.org/sites/www.sierraclub.org/files/uploads-wysiwig/SIERRA%20Teasdale%20Bikes%20and%20Wilderness%204%20WB.jpg");
@@ -98,7 +97,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 318px;
   width: 100vw;
   background-image: url("https://images8.alphacoders.com/681/681196.jpg");
   background-size: cover;
