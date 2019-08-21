@@ -63,9 +63,11 @@ class UserRoutes extends Component {
       );
     });
     return (
-      <div className="user-routes">
-        <div className="user-route-title">Saved Routes</div>
-        {routeInstance}
+      <div className="user-routes-container">
+        <div className="user-routes">
+          <div className="user-route-title">Saved Routes</div>
+          <div className="routes">{routeInstance}</div>
+        </div>
       </div>
     );
   }

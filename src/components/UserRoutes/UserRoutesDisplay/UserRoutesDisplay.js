@@ -46,15 +46,14 @@ export default class UserRoutesDisplay extends Component {
     const MapLoader = withScriptjs(Mapper);
     return (
       <div className="user-maps-display">
-        <span className="addy-display" onClick={this.showMap}>{`${
-          this.props.strtAdd
-        } to ${this.props.endAdd}`}</span>
-
-        <button
-          className="delete-button"
-          onClick={() => this.props.deleteRouteFn(this.props.id)}
-        />
-        <button onClick={this.toggleDescModal} className="edit-button" />
+        <span className="addy-display" onClick={this.showMap}>
+          {`${this.props.strtAdd} to ${this.props.endAdd}`}
+          <button
+            className="delete-button"
+            onClick={() => this.props.deleteRouteFn(this.props.id)}
+          />
+          <button onClick={this.toggleDescModal} className="edit-button" />
+        </span>
         <br />
         <span className="dist-display">Distance - {this.props.distance}</span>
         <br />
@@ -82,9 +81,9 @@ export default class UserRoutesDisplay extends Component {
                 endLat={this.props.endLat}
                 endLng={this.props.endLng}
               />
-            </div>{" "}
+            </div>
             <div className="step-disp">Step by step: </div>
-            <div className="steps-box2">{userStepInfo}</div>
+            <div className="steps-box">{userStepInfo}</div>
           </div>
         )}
         {!this.props.description ? (

@@ -1,13 +1,36 @@
+.user-routes-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 32% 68%;
+  background-image: cover;
+  background-image: url("https://cdn.wallpapersafari.com/10/12/CWABiF.jpg");
+}
+
+.user-routes {
+  display: grid;
+  margin-top: 7em;
+  grid-template-columns: 100%;
+  grid-auto-rows: 10%;
+  background-color: rgb(236, 236, 236);
+  border: inset 2px rgb(248, 248, 248);
+  box-shadow: 5px 5px 5px black;
+  color: black;
+}
+
 .user-route-title {
+  display: flex;
+  justify-content: center;
   font-weight: bold;
-  font-size: 32px;
-  margin-top: 50px;
-  color: white;
+  font-size: 3.6em;
+  margin: 1em 0px;
+}
+.routes {
+  display: grid;
+  grid-template-columns: 100%;
 }
 
 .addy-display {
-  font-size: 28px;
-  color: white;
+  font-size: 2em;
   cursor: pointer;
 }
 
@@ -17,36 +40,30 @@
 
 .dist-display {
   font-size: 20px;
-  color: white;
 }
-
-.user-routes {
+.user-maps-display {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  height: 100vh;
-  width: 100vw;
-  background-color: rgba(0, 0, 0, 0.322);
-  background-image: cover;
-  background-image: url("https://cdn.wallpapersafari.com/10/12/CWABiF.jpg");
+  width: 80%;
+  margin-bottom: 2%;
+  border-bottom: dotted 2px rgb(255, 255, 255);
+  justify-self: center;
 }
 
-.user-maps-display > .delete-button {
-  height: 20px;
-  margin-top: 75px;
-  width: 20px;
-  border-radius: 25px;
+.delete-button {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  background-repeat: none;
   background-size: cover;
   margin-left: 10px;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtewK0mODnhNNOKfgv-wW3ZQBiBEMbGFh3Ty_UdqrEUrYQNZfstw");
 }
-.user-maps-display .edit-button {
-  height: 20px;
-  margin-top: 75px;
-  margin-left: 100px;
-  width: 20px;
+.edit-button {
+  height: 1em;
+  width: 1em;
   background-size: cover;
+  background-repeat: none;
   border-radius: 3px;
   margin-left: 10px;
   background-image: url("https://image.flaticon.com/icons/png/512/84/84380.png");
@@ -56,7 +73,7 @@
   color: white;
   display: grid;
   grid-template-columns: auto;
-  grid-auto-rows: 20%;
+  grid-auto-rows: 15%;
   overflow-y: scroll;
   height: 90%;
   font-size: 20px;
