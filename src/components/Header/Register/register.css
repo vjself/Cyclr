@@ -1,22 +1,28 @@
 .reg-cont {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: auto;
-  background-size: auto;
+  background-size: cover;
   background-repeat: no-repeat;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
-
-  opacity: 1.7;
-  background-image: url("https://cdn.visitstgeorge.com/wp-content/uploads/2013/11/mtnbike-prospector4.jpg");
+  background-image: url("https://www.saranaclake.com/f/styles/nodelistingimages/public/header/cycling-saranac-lake_0.jpg?itok=4nw3nhaD");
 }
 
 .register {
-  width: 200px;
-  padding: 20px 12px 10px 20px;
+  width: 50%;
+}
+.reg-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20%;
+  align-items: center;
+  width: 80%;
+  text-align: center;
 }
 
 .welcome {
@@ -26,54 +32,25 @@
   color: white;
 }
 
-.register input[type="text"],
-.register input[type="date"],
-.register input[type="datetime"],
-.register input[type="number"],
-.register input[type="search"],
-.register input[type="time"],
-.register input[type="password"],
-.register input[type="email"],
-textarea,
-select {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  border: 1px solid #bebebe;
-  padding: 7px;
-  margin: 0px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  outline: none;
+.reg-form input {
+  width: 100%;
+  border: 0;
+  font-family: inherit;
+  font-size: 1.6em;
+  height: 50px;
+  border-bottom: 2px solid #eef0f3;
+  background: none;
+  color: #ffffff;
 }
-.register input[type="text"]:focus,
-.register input[type="date"]:focus,
-.register input[type="datetime"]:focus,
-.register input[type="number"]:focus,
-.register input[type="search"]:focus,
-.register input[type="time"]:focus,
-.register input[type="password"]:focus,
-.register input[type="email"]:focus,
-.register textarea:focus,
-.register select:focus {
-  -moz-box-shadow: 0 0 8px #88d5e9;
-  -webkit-box-shadow: 0 0 8px #88d5e9;
-  box-shadow: 0 0 8px #88d5e9;
-  border: 1px solid #88d5e9;
-}
-.register input[type="submit"],
-.register input[type="button"] {
+
+.reg-form button {
   -webkit-tap-highlight-colorpadding: 12px 35px;
   border-radius: 4px;
   border: 1px solid transparent;
-  font-weight: 500;
-  text-align: center;
   cursor: pointer;
-  padding: 12px 35px;
+  padding: 8px 35px;
   border-radius: 4px;
-  margin-top: 20px;
+  font-weight: 600;
   background-color: greenyellow;
   border: 1px solid transparent;
   border-top-color: transparent;
@@ -88,7 +65,16 @@ select {
   border-left-color: transparent;
   border-left-style: solid;
   border-left-width: 1px;
-  font-weight: 500;
   text-align: center;
-  width: 141px;
+  margin-top: 20px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+}
+
+.reg-form input::placeholder {
+  color: white;
+}
+
+.reg-form input:focus {
+  background: none;
+  outline: none;
 }

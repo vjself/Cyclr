@@ -1,87 +1,41 @@
 .search-cont {
   display: flex;
   flex-direction: column;
+  margin-top: 100px;
   align-items: center;
-  width: 100vw;
+  justify-content: center;
+  height: 90.5vh;
   background-size: cover;
-  background-repeat: no-repeat;
   background-image: url("https://www.sierraclub.org/sites/www.sierraclub.org/files/uploads-wysiwig/SIERRA%20Teasdale%20Bikes%20and%20Wilderness%204%20WB.jpg");
 }
 
-.search-cont > .input-section {
-  border: 0;
-  width: 100%;
-  font-size: 30px;
-  line-height: 35px;
-  margin-top: 175px;
-  overflow: wrap;
-  height: 70px;
-  padding: 10px;
-  background: transparent;
-  color: rgb(255, 255, 255);
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
+.input-section {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+  font-size: 1.6em;
 }
 
-.inp {
-  position: relative;
-  margin: auto;
-  width: 100%;
-  max-width: 280px;
-}
-.inp .label {
-  position: absolute;
-  top: 16px;
-  margin: 0 40px;
-  left: 0;
-  font-size: 16px;
-  color: #eceff3;
-  font-weight: 500;
-  transform-origin: 0 0;
-  transition: all 0.2s ease;
-}
-.inp .border {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: #07f;
-  transform: scaleX(0);
-  transform-origin: 0 0;
-  transition: all 0.15s ease;
-}
-.inp input {
-  -webkit-appearance: none;
-  width: 15%;
+.inputsss input {
+  width: 30%;
   border: 0;
   font-family: inherit;
-  padding: 12px 0;
-  height: 48px;
-  max-width: 280px;
-  font-size: 16px;
-  font-weight: 500;
+  height: 50px;
   border-bottom: 2px solid #eef0f3;
   background: none;
-  border-radius: 0;
-  color: #e2e6ee;
-  margin: 0 40px;
-  transition: all 0.15s ease;
-  z-index: 4;
+  color: #ffffff;
+  margin: 40px 40px;
 }
-.inp input:hover {
-  background: rgba(34, 50, 84, 0.03);
+
+.inputsss input::placeholder {
+  color: white;
 }
-.inp input:not(:placeholder-shown) + span {
-  color: #ebeef3;
-  transform: translateY(-26px) scale(0.75);
-}
-.inp input:focus {
+
+.inputsss input:focus {
   background: none;
   outline: none;
-}
-.inp input:focus + span {
-  color: #ebedf3f5;
-  transform: translateY(-26px) scale(0.75);
 }
 
 .submit-route {
@@ -92,16 +46,14 @@
   text-align: center;
 }
 
-.map-window {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-  background-image: url("https://images8.alphacoders.com/681/681196.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: -10px;
+.dist {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: space-around;
+}
+
+.go-button {
+  width: 20%;
 }
 
 .save-route-btn,
@@ -109,11 +61,8 @@
   -webkit-tap-highlight-colorpadding: 12px 35px;
   border-radius: 4px;
   border: 1px solid transparent;
-  font-weight: 500;
-  text-align: center;
   cursor: pointer;
-  width: 200px;
-  padding: 12px 35px;
+  padding: 8px 35px;
   border-radius: 4px;
   background-color: greenyellow;
   border: 1px solid transparent;
@@ -129,35 +78,34 @@
   border-left-color: transparent;
   border-left-style: solid;
   border-left-width: 1px;
-  font-weight: 500;
   text-align: center;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
 }
 
-.save-route-btn {
-  margin-right: 450px;
-  margin-bottom: 20px;
-}
-
 .greeting {
-  margin-top: 50px;
   list-style-type: none;
-  font-size: 40px;
-  color: #f8fafce8;
+  font-size: 4em;
   font-weight: bold;
-  margin-bottom: 40px;
+  color: white;
 }
 
-.dist {
-  margin-top: 100px;
-  margin-right: 500px;
+.map-window {
+  height: 90%;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 100%;
+  background-color: rgba(179, 179, 179, 0.5);
+  border-radius: 10px;
 }
 
 .inner-map-w {
-  width: 80%;
-  display: flex;
-  margin-top: 50px;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 80% 9%;
+  justify-items: center;
+  align-items: center;
+}
+
+.map-step-cont {
+  height: 90%;
 }

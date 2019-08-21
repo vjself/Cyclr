@@ -29,7 +29,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <img src={logo} alt="" />
+        <img id="logo" src={logo} alt="" />
         {!this.props.user.id ? (
           <ul className="login-controls">
             <li>
@@ -56,9 +56,7 @@ class Header extends Component {
               <NavLink to="/donate">Donate</NavLink>
             </li>
             {this.props.user.id ? (
-              <li onClick={() => this.logoutFn()}>
-                <a>Logout</a>
-              </li>
+              <li onClick={() => this.logoutFn()}>Logout</li>
             ) : (
               <li>
                 <NavLink to="/login">Login</NavLink>

@@ -16,7 +16,7 @@ class App extends Component {
       <div>
         <div className="App">
           <Header />
-          <div className="outer-cont">{routes}</div>
+          {routes}
         </div>
       </div>
     );

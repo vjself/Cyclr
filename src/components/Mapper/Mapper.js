@@ -1,6 +1,5 @@
 /* global google */
 import React, { Component } from "react";
-import "./mapper.css";
 import {
   withGoogleMap,
   GoogleMap,
@@ -64,12 +63,10 @@ export default class Mapper extends Component {
       </GoogleMap>
     ));
     return (
-      <div className="map-container">
-        <UserMap
-          containerElement={<div style={{ height: `400px`, width: `100%` }} />}
-          mapElement={<div style={{ height: `100%` }} />}
-        />
-      </div>
+      <UserMap
+        containerElement={<div style={{ height: `90%`, width: `90%` }} />}
+        mapElement={<div style={{ height: `100%` }} />}
+      />
     );
   }
 }

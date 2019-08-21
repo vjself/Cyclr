@@ -27,24 +27,14 @@ module.exports = {
       newStep,
       id
     ]);
-    return res
-      .status(200)
-      .send(userRoutes)
-      .catch(err => {
-        alert(err);
-      });
+    return res.status(200).send(userRoutes);
   },
 
   getUserRoutes: async (req, res) => {
     let userRoutes = await req.app
       .get("db")
       .get_user_routes([req.session.user.id]);
-    return res
-      .status(200)
-      .send(userRoutes)
-      .catch(err => {
-        err;
-      });
+    return res.status(200).send(userRoutes);
   },
 
   deleteUserRoute: async (req, res) => {
@@ -52,12 +42,7 @@ module.exports = {
     let userRoutes = await req.app
       .get("db")
       .delete_user_route([id, req.session.user.id]);
-    return res
-      .status(200)
-      .send(userRoutes)
-      .catch(err => {
-        err;
-      });
+    return res.status(200).send(userRoutes);
   },
 
   updateDescription: async (req, res) => {
@@ -66,21 +51,11 @@ module.exports = {
     let userRoutes = await req.app
       .get("db")
       .update_description([id, req.session.user.id, desc]);
-    return res
-      .status(200)
-      .send(userRoutes)
-      .catch(err => {
-        err;
-      });
+    return res.status(200).send(userRoutes);
   },
 
   community: async (req, res) => {
     let userRoutes = await req.app.get("db").get_all_user_routes();
-    return res
-      .status(200)
-      .send(userRoutes)
-      .catch(err => {
-        err;
-      });
+    return res.status(200).send(userRoutes);
   }
 };

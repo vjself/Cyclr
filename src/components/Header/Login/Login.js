@@ -37,7 +37,7 @@ class Login extends Component {
     return (
       <section className="login">
         <div className="inner-div">
-          <span>LOG IN</span>
+          <h1>LOG IN</h1>
           <br />
           <br />
           <br />

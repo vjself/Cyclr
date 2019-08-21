@@ -25,10 +25,11 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-height: 100%;
+  height: 100vh;
   width: 100vw;
-  background-size: cover;
-  background-image: url("https://cdn2.vectorstock.com/i/1000x1000/91/11/asphalt-with-road-lines-vector-13889111.jpg");
+  background-color: rgba(0, 0, 0, 0.322);
+  background-image: cover;
+  background-image: url("https://cdn.wallpapersafari.com/10/12/CWABiF.jpg");
 }
 
 .user-maps-display > .delete-button {
@@ -51,34 +52,13 @@
   background-image: url("https://image.flaticon.com/icons/png/512/84/84380.png");
 }
 
-h1 {
-  font-size: 36px;
-  color: white;
-  border-bottom: 2px solid rgba(241, 237, 237, 0.753);
-  padding: 5px;
-}
-
-.map-window {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  height: 100vh;
-  margin-top: 55.7vh;
-  width: 100vw;
-  background-image: url("https://images8.alphacoders.com/681/681196.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: -10px;
-}
-
 .steps-box {
-  max-height: 500px;
-  min-width: 400px;
-  overflow: scroll;
-  color: black;
-  font-size: 20px;
   color: white;
-  margin-left: 100px;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: 20%;
+  overflow-y: scroll;
+  height: 90%;
+  font-size: 20px;
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.555);
 }

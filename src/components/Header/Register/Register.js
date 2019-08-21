@@ -108,7 +108,9 @@ class Register extends Component {
               onChange={e => this.changeHandler(e.target.name, e.target.value)}
             />
             <br />
-            <input type="submit" value="Submit" onClick={this.register} />
+            <button type="submit" value="Submit" onClick={this.register}>
+              Submit
+            </button>
           </form>
         </div>
       </section>

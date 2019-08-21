@@ -1,20 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import "./steps.css";
 
-export default class Steps extends Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="steps-cont">
-        <span className="dis-dur">Distance - {this.props.distance}</span>
-        <br />
-        <span className="dis-dur">Duration - {this.props.duration}</span>
-        <br />
-        <span className="dir"> {`${this.props.instructions}.`}</span>
-      </div>
-    );
-  }
+export default function Steps(props) {
+  return (
+    <div className="steps-cont">
+      <span className="dis-dur">Distance - {props.distance}</span>
+      <br />
+      <span className="dis-dur">Duration - {props.duration}</span>
+      <br />
+      <span className="dir"> {`${props.instructions}.`}</span>
+    </div>
+  );
 }
