@@ -1,13 +1,14 @@
 header {
-  height: 100px;
+  height: 10%;
   width: 100%;
   display: flex;
-  position: fixed;
   justify-content: space-around;
+  position: fixed;
   align-items: center;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.377);
   box-shadow: 2px 2px 5px black;
   background: white;
+  z-index: 1;
 }
 
 #logo {

@@ -29,7 +29,6 @@ class DescModal extends React.Component {
       margin: "0 auto",
       padding: 30
     };
-    console.log(this.props);
     return (
       <div className="backdrop" style={{ backdropStyle }}>
         <div className="modal" style={{ modalStyle }}>

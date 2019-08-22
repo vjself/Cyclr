@@ -1,30 +1,41 @@
 .descrip {
-  color: white;
-  margin: 20px 0;
+  color: black;
+  margin: 20px;
+  font-size: 2em;
+}
+
+.descrip h4 {
+  margin: 0;
+  text-decoration: underline;
+  text-align: center;
 }
 
 .steps-box2 {
-  display: flex;
-  flex-direction: column;
-  max-height: 500px;
-  min-width: 400px;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 100%;
+  grid-auto-rows: 15%;
+  font-size: 20px;
+  text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.555);
   overflow: scroll;
   color: black;
-  font-size: 20px;
-  color: white;
-  margin-right: 200px;
-  margin-top: 50px;
+  font-size: 2em;
   line-height: 25px;
 }
 
+.step-disp {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 .map {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100vw;
-  justify-content: space-evenly;
+  height: 50%;
+  width: 50%;
+  right: 0;
 }
 .map-window2 {
   width: 100%;
-  margin-left: 100px;
+  height: 110%;
+  position: absolute;
+  right: 0;
 }

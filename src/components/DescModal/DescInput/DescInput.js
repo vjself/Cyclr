@@ -10,12 +10,27 @@ export default class DescInput extends Component {
     };
   }
 
+  myStyle = () => {
+    return {
+      width: "80%",
+      height: "12em",
+      color: "black",
+      fontSize: "2em"
+    };
+  };
+  boohooStyle = () => {
+    return {
+      textAlign: "center"
+    };
+  };
+
   render() {
     return (
-      <div>
+      <div className="boohoo" style={this.boohooStyle()}>
         <textarea
           className="desc-input"
-          placeholder="Enter description here..."
+          style={this.myStyle()}
+          placeholder="Tell us about it your route..."
           type="text"
           value={this.state.description}
           onChange={e => {
@@ -24,9 +39,11 @@ export default class DescInput extends Component {
         />
         <br />
         <button
-          onClick={() =>
-            this.props.updateRouteFn(this.state.input, this.props.id)
-          }
+          className="go-button"
+          onClick={() => {
+            this.props.onClose();
+            this.props.updateRouteFn(this.state.input, this.props.id);
+          }}
         >
           Save
         </button>

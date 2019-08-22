@@ -1,12 +1,16 @@
-.search-cont {
-  display: flex;
-  flex-direction: column;
-  margin-top: 100px;
-  align-items: center;
-  justify-content: center;
-  height: 90.5vh;
+main {
   background-size: cover;
   background-image: url("https://www.sierraclub.org/sites/www.sierraclub.org/files/uploads-wysiwig/SIERRA%20Teasdale%20Bikes%20and%20Wilderness%204%20WB.jpg");
+  height: 100%;
+}
+
+.search-cont {
+  display: flex;
+  height: 90%;
+  margin-top: 8em;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .input-section {
@@ -87,6 +91,7 @@
   font-size: 4em;
   font-weight: bold;
   color: white;
+  margin: 1% 0;
 }
 
 .map-window {

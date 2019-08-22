@@ -31,6 +31,7 @@ module.exports = {
   },
 
   getUserRoutes: async (req, res) => {
+    console.log(req.session.user.id);
     let userRoutes = await req.app
       .get("db")
       .get_user_routes([req.session.user.id]);
