@@ -45,23 +45,28 @@ export default class UserRoutesDisplay extends Component {
     return (
       <div className="saved">
         <div className="user-maps-display2">
-          <span className="addy-display" onClick={this.showMap}>
-            {`${this.props.strtAdd} to ${this.props.endAdd}`}
-            <button
-              className="delete-button"
-              onClick={() => this.props.deleteRouteFn(this.props.id)}
-            />
-            <button onClick={this.toggleDescModal} className="edit-button" />
-          </span>
+          <div>
+            <div>
+              <span className="addy-display" onClick={this.showMap}>{`${
+                this.props.strtAdd
+              } to ${this.props.endAdd}`}</span>
+              &nbsp;
+              <button
+                className="delete-button"
+                onClick={() => this.props.deleteRouteFn(this.props.id)}
+              />
+              &nbsp;
+              <button onClick={this.toggleDescModal} className="edit-button" />
+            </div>
+          </div>
           <br />
-          <span className="dist-display">Distance - {this.props.distance}</span>
-          <br />
-          <span className="dist-display">Duration - {this.props.duration}</span>
+          <div className="dist-display">Distance - {this.props.distance}</div>
+          <div className="dist-display">Duration - {this.props.duration}</div>
           {!this.props.description ? (
             <div />
           ) : (
             <div className="descrip" type="text-box">
-              <h4>About</h4>
+              <h5>About</h5>
               {this.props.description} <br />
             </div>
           )}
@@ -93,7 +98,6 @@ export default class UserRoutesDisplay extends Component {
         </div>
         {this.state.showMap === true && (
           <div className="stepzzz">
-            <div className="step-disp">Step by step: </div>
             <div className="steps-box2">{userStepInfo}</div>
           </div>
         )}

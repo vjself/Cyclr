@@ -121,37 +121,37 @@ class RouteBuilder extends Component {
           ) : (
             <div className="map-window">
               <div className="dist">
-                <h2>Distance - {route[0].legs[0].distance.text}</h2>
-                <br />
-                <h2>Time - {route[0].legs[0].duration.text}</h2>
-                <h1 className="step-title">Step by Step</h1>
-              </div>
-              <div className="map-step-cont">
-                <div className="inner-map-w">
-                  <MapLoader
-                    googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
-                      process.env.REACT_APP_API_KEY
-                    }`}
-                    loadingElement={<div style={{ height: `100%` }} />}
-                    strtLat={route[0].legs[0].start_location.lat}
-                    strtLng={route[0].legs[0].start_location.lng}
-                    endLat={route[0].legs[0].end_location.lat}
-                    endLng={route[0].legs[0].end_location.lng}
-                  />
-                  <div className="steps-box">{steps}</div>
-                  <SaveRoute
-                    strtLat={route[0].legs[0].start_location.lat}
-                    strtLng={route[0].legs[0].start_location.lng}
-                    endLat={route[0].legs[0].end_location.lat}
-                    endLng={route[0].legs[0].end_location.lng}
-                    strtAdd={route[0].legs[0].start_address}
-                    endAdd={route[0].legs[0].end_address}
-                    newStep={saveSteps}
-                    distance={route[0].legs[0].distance.text}
-                    duration={route[0].legs[0].duration.text}
-                    id={this.props.user.id}
-                  />
+                <div>
+                  Distance - {route[0].legs[0].distance.text} <br />
+                  Time - {route[0].legs[0].duration.text}
                 </div>
+
+                <div className="step-title">Step by Step</div>
+              </div>
+              <div className="inner-map-w">
+                <MapLoader
+                  googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
+                    process.env.REACT_APP_API_KEY
+                  }`}
+                  loadingElement={<div style={{ height: `100%` }} />}
+                  strtLat={route[0].legs[0].start_location.lat}
+                  strtLng={route[0].legs[0].start_location.lng}
+                  endLat={route[0].legs[0].end_location.lat}
+                  endLng={route[0].legs[0].end_location.lng}
+                />
+                <div className="steps-box">{steps}</div>
+                <SaveRoute
+                  strtLat={route[0].legs[0].start_location.lat}
+                  strtLng={route[0].legs[0].start_location.lng}
+                  endLat={route[0].legs[0].end_location.lat}
+                  endLng={route[0].legs[0].end_location.lng}
+                  strtAdd={route[0].legs[0].start_address}
+                  endAdd={route[0].legs[0].end_address}
+                  newStep={saveSteps}
+                  distance={route[0].legs[0].distance.text}
+                  duration={route[0].legs[0].duration.text}
+                  id={this.props.user.id}
+                />
               </div>
             </div>
           )}

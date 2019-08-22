@@ -17,7 +17,6 @@ export default class CommunityDisplay extends Component {
   };
 
   render() {
-    console.log("Props routes", this.props.routes[0]);
     let instruc = this.props.routes[0].steps;
     let instruc2 = instruc.map(e => {
       return JSON.parse(e);

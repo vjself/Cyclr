@@ -5,8 +5,10 @@
 
 .saved {
   display: grid;
+  justify-content: center;
   grid-template-columns: 33% 33% 33%;
-  height: 100%;
+  grid-template-rows: 95%;
+  height: 95%;
 }
 
 .map-saved {
@@ -31,31 +33,31 @@
   height: 100%;
   margin-top: 8em;
   grid-template-columns: 100%;
-  grid-auto-rows: 10%;
+  grid-template-rows: 10% 80%;
   box-shadow: 2px 2px 5px black;
   color: black;
 }
 
 .user-route-title {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 3em;
   font-weight: bold;
   font-size: 3.6em;
   margin: 1em 0px;
 }
 
 .addy-display {
-  font-size: 2em;
+  font-size: 1.8em;
+  height: 5%;
   cursor: pointer;
 }
 
-.addy-display:hover {
-  text-decoration: underline;
+.dist-display {
+  font-size: 1.7em;
+  font-weight: bold;
 }
 
-.dist-display {
-  font-size: 20px;
-}
 .user-maps-display {
   display: flex;
   flex-direction: column;
@@ -64,43 +66,68 @@
   border-bottom: dotted 2px rgb(255, 255, 255);
   justify-self: center;
 }
+
 .user-maps-display2 {
   background-color: rgba(228, 228, 228, 0.603);
   border: groove 5px grey;
   box-shadow: 2px 2px 5px;
   display: flex;
+  width: 90%;
   flex-direction: column;
-  width: 80%;
+  padding: 10px;
+  font-size: 1.1em;
   justify-self: center;
 }
 
 .delete-button {
-  height: 1em;
+  height: 1.4em;
+  z-index: 3;
   width: 1em;
   border-radius: 50%;
   background-repeat: none;
   background-size: cover;
-  margin-left: 10px;
   background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtewK0mODnhNNOKfgv-wW3ZQBiBEMbGFh3Ty_UdqrEUrYQNZfstw");
 }
 .edit-button {
-  height: 1em;
+  z-index: 3;
+  height: 1.4em;
   width: 1em;
   background-size: cover;
   background-repeat: none;
   border-radius: 3px;
-  margin-left: 10px;
+
   background-image: url("https://image.flaticon.com/icons/png/512/84/84380.png");
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  transform: scale(1.2);
+  transition: 500ms;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .steps-box {
   display: grid;
-  grid-template-columns: auto;
-  color: white;
-  position: absolute;
-  right: 0;
+  grid-template-columns: 90%;
+  height: 90%;
   grid-auto-rows: 10%;
+  color: white;
   overflow-y: scroll;
-  font-size: 20px;
+  font-size: 1.5em;
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.555);
 }
+
+/* display: grid;
+height: 95%;
+grid-template-columns: 100%;
+grid-auto-rows: 13%;
+font-size: 20px;
+text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.555);
+overflow-y: scroll;
+color: black;
+font-size: 2em;
+line-height: 25px;
+background-color: rgba(228, 228, 228, 0.603);
+border: groove 5px grey;
+box-shadow: 2px -2px 5px; */

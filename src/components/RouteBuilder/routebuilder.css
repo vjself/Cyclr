@@ -54,6 +54,9 @@ main {
   display: grid;
   grid-template-columns: auto auto;
   justify-content: space-around;
+  font-size: 2em;
+  font-weight: bold;
+  align-items: center;
 }
 
 .go-button {
@@ -98,19 +101,22 @@ main {
   height: 90%;
   width: 90%;
   display: grid;
-  grid-template-columns: 100%;
   background-color: rgba(179, 179, 179, 0.5);
+  grid-template-columns: 100%;
+  grid-template-rows: 5% 95%;
   border-radius: 10px;
 }
 
 .inner-map-w {
   display: grid;
+  position: relative;
+  grid-template-rows: auto;
   grid-template-columns: 60% 40%;
-  grid-template-rows: 80% 9%;
   justify-items: center;
   align-items: center;
+  padding: 10px;
 }
 
 .map-step-cont {
-  height: 90%;
+  height: 100%;
 }

@@ -4,23 +4,30 @@
   font-size: 2em;
 }
 
-.descrip h4 {
+.descrip h5 {
   margin: 0;
+  text-decoration: underline;
+  text-align: center;
+}
+.descrip p {
   text-decoration: underline;
   text-align: center;
 }
 
 .steps-box2 {
   display: grid;
-  height: 100%;
   grid-template-columns: 100%;
-  grid-auto-rows: 15%;
+  grid-auto-rows: 13%;
   font-size: 20px;
   text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.555);
-  overflow: scroll;
+  overflow-y: scroll;
   color: black;
   font-size: 2em;
   line-height: 25px;
+  background-color: rgba(228, 228, 228, 0.603);
+  border: groove 5px grey;
+  box-shadow: 2px -2px 5px;
+  height: 100%;
 }
 
 .step-disp {
@@ -35,7 +42,7 @@
 }
 .map-window2 {
   width: 100%;
-  height: 110%;
+  height: 111%;
   position: absolute;
   right: 0;
 }

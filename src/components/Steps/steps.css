@@ -1,9 +1,7 @@
 .steps-cont {
-  text-align: left;
   border-bottom: 3px dashed rgba(82, 82, 82, 0.658);
   min-width: 400px;
   color: black;
-  overflow-y: scroll;
 }
 
 .dis-dur {
