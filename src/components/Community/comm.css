@@ -1,0 +1,83 @@
+.comm-routes-cont {
+  background-image: url("https://cranbrooktourism.com/uploads/site/hero/Cranbrook_CommunityForest_ChrisIstace-04325-xl.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: grid;
+  margin-top: 100px;
+  grid-template-columns: 100%;
+  grid-template-rows: 10% 85%;
+  overflow-y: scroll;
+}
+.comm-container {
+  justify-content: space-evenly;
+}
+.comm-title {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6em;
+  font-size: 3em;
+  text-shadow: 2px 2px 5px black;
+}
+.comm-desc {
+}
+.comm-about {
+  font-size: 1.2em;
+}
+
+.comm-addy {
+  font-size: 2em;
+  background-color: rgba(228, 228, 228, 0.603);
+  border: groove 5px grey;
+}
+
+.comm-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 100%;
+  color: black;
+  position: relative;
+}
+
+.comm-submission {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 10%;
+}
+#comm-addy-in {
+  cursor: pointer;
+  font-size: 1.2em;
+}
+#comm-addy-in:hover {
+  text-decoration: underline;
+}
+
+.comm-map-cont {
+  position: relative;
+}
+.comm-map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.comm-step-box {
+  background-color: rgba(228, 228, 228, 0.603);
+  display: grid;
+  grid-template-columns: 100%;
+  grid-auto-rows: 13%;
+  border: groove 5px grey;
+  height: 60vh;
+  overflow: scroll;
+}
+
+.comm-step-cont {
+  position: relative;
+  font-size: 1.7em;
+  display: grid;
+  grid-auto-rows: 10%;
+}
+
+.comm-step {
+  postion: absolute;
+}

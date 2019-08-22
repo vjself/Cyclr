@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CommunityDisplay from "./CommunityDisplay/CommunityDisplay";
 import { connect } from "react-redux";
+import "./comm.css";
 import { getAllUserRoutes } from "../../redux/reducer";
 import axios from "axios";
 
@@ -8,9 +9,7 @@ class Community extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      showMap: false
-    };
+    this.state = {};
   }
 
   componentDidMount() {
@@ -20,7 +19,6 @@ class Community extends Component {
   }
 
   render() {
-    console.log(this.props.userRoutes);
     let routeInstance = this.props.userRoutes.map((e, i) => {
       return (
         <CommunityDisplay
@@ -43,17 +41,12 @@ class Community extends Component {
       );
     });
     return (
-      <div className="user-routes">
-        <div
-          className="user-route-title"
-          style={{
-            textDecoration: "underline",
-            marginBottom: "20px"
-          }}
-        >
-          Community
+      <div className="comm-routes-cont">
+        <div className="comm-title">
+          <div>Community</div>
+          <div>Step-by-Step</div>
         </div>
-        {routeInstance}
+        <div className="comm-routes">{routeInstance}</div>
       </div>
     );
   }

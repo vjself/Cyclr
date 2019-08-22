@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import Mapper from "../../Mapper/Mapper";
 import { withScriptjs } from "react-google-maps";
 import Steps from "../../Steps/Steps";
-import "../../UserRoutes/UserRoutesDisplay/userRoutesDisplay.css";
+import ".././comm.css";
 
 export default class CommunityDisplay extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      showMap: false
+    };
   }
 
   showMap = () => {
@@ -17,7 +19,7 @@ export default class CommunityDisplay extends Component {
   };
 
   render() {
-    let instruc = this.props.routes[0].steps;
+    let instruc = this.props.instructions;
     let instruc2 = instruc.map(e => {
       return JSON.parse(e);
     });
@@ -32,20 +34,26 @@ export default class CommunityDisplay extends Component {
     });
     const MapLoader = withScriptjs(Mapper);
     return (
-      <div className="user-maps-display">
-        <span className="addy-display" onClick={this.showMap}>{`${
-          this.props.strtAdd
-        } to ${this.props.endAdd}`}</span>
-        <br />
-        <span className="dist-display">
-          Submitted by - {this.props.username}
-        </span>
-        <br />
-
-        {this.state.showMap === true && (
-          <div className="map">
-            {" "}
-            <div className="map-window2">
+      <div className="comm-container">
+        <div className="comm-submitted">
+          <div className="comm-addy">
+            <div id="comm-addy-in" onClick={() => this.showMap()}>
+              {`${this.props.strtAdd} to ${this.props.endAdd}`}
+            </div>
+            <div>
+              Submitted by - <i>{this.props.username}</i>
+            </div>
+            <div>
+              <div className="comm-about">About</div>
+              <div className="comm-desc">
+                {this.props.description && this.props.description}
+              </div>
+            </div>
+          </div>
+        </div>{" "}
+        <div className="comm-map-cont">
+          {this.state.showMap === true && (
+            <div className="comm-map">
               <MapLoader
                 googleMapURL={`https://maps.googleapis.com/maps/api/js?key=${
                   process.env.REACT_APP_API_KEY
@@ -56,18 +64,17 @@ export default class CommunityDisplay extends Component {
                 endLat={this.props.endLat}
                 endLng={this.props.endLng}
               />
-            </div>{" "}
-            <div className="step-disp">Step by step: </div>
-            <div className="steps-box2">{userStepInfo}</div>
-          </div>
-        )}
-        {!this.props.description ? (
-          <div />
-        ) : (
-          <div className="descrip" type="text-box">
-            {this.props.description} <br />
-          </div>
-        )}
+            </div>
+          )}
+        </div>
+        <div className="comm-step-cont">
+          {this.state.showMap && (
+            <div className="comm-step">
+              <div className="comm-step-title">Step by step </div>
+              <div className="comm-step-box">{userStepInfo}</div>
+            </div>
+          )}
+        </div>
       </div>
     );
   }
